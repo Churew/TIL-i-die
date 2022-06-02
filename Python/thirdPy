@@ -1,0 +1,16 @@
+오늘은 나도코딩 파이썬 6시간 강의에 있는 세번째 퀴즈를 풀어보았다.
+링크: https://www.youtube.com/watch?v=kWiCuklohdY&t=4295s
+
+이 정도 난이도의 문제도 약간 헷갈리는 것을 보니,
+좀 더 쉬운 내용들을 복습할 필요가 있을 것 같다.
+
+url = input("사이트를 입력하세요 ")
+
+pass0 = url[7:]
+pass1 = pass0[:-4]
+pass2 = pass1[0:3]
+
+print("{}{}{}{}".format(pass2,len(pass1),pass1.count("e"),"!"))
+
+여기서 문자열 슬라이싱과 특정 문자를 검색하는 count를 능숙하게 다루지 못하는 것 같다.
+이 부분에 대해 복습하고 정리해야겠다.
