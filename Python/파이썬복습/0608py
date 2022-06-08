@@ -1,0 +1,20 @@
+이제부터 파이썬 수업시간에 배웠던 것을 복습하겠다.
+생각해보니 파이썬을 배우는 이유는 파이썬을 잘하기 위해서이고,
+잘하기 위한 이유는 파이썬 과제에 집중하기 위함이니..
+
+오늘 복습할 내용은 datetime이다.
+과제에 필요한 플레이 타임을 적용하기 위해 사용하는데,
+시작 시간을 변수로 만들고
+변수에서 지금 시간을 빼면 
+그게 플레이 타임이 된다.
+
+from datetime import datetime
+
+startTime = datetime.now()
+
+while True:
+    currTime = datetime.now()
+    timeDiff = currTime - startTime
+    print(timeDiff.seconds)
+    
+요렇게 말이다.
