@@ -1,0 +1,51 @@
+이번엔 터틀이 벽에 닿았을때 튕기는 걸 복습해보겠다.
+
+import pygame
+import turtle
+
+SCREEN_WIDTH = 400
+SCREEN_HEIGHT = 300
+
+def tline():
+    tline = turtle.Turtle()
+
+    tline.up()
+    tline.goto(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+    tline.down()
+
+    tline.goto(-SCREEN_WIDTH/2,SCREEN_HEIGHT/2)
+    tline.goto(-SCREEN_WIDTH/2,-SCREEN_HEIGHT/2)
+    tline.goto(SCREEN_WIDTH/2,-SCREEN_HEIGHT/2)
+    tline.goto(SCREEN_WIDTH/2,SCREEN_HEIGHT/2)
+
+tline()
+
+asteroid = turtle.Turtle()
+asteroid.shape("turtle")
+
+loc = [100,100]
+vel = [4,-4]
+
+asteroid.goto(loc[0],loc[1])
+
+for i in range(200):
+    loc[0] = loc[0] + vel[0]
+    loc[1] = loc[1] + vel[1]
+
+    asteroid.goto(loc[0],loc[1])
+
+    if loc[0] >= SCREEN_WIDTH/2:
+        vel[0] = -vel[0]
+    elif loc[0] <= -SCREEN_WIDTH/2:
+        vel[0] = -vel[0]
+    elif loc[1] >= SCREEN_HEIGHT/2:
+        vel[1] = -vel[1]
+    elif loc[1] <= -SCREEN_HEIGHT/2:
+        vel[1] = -vel[1]
+
+turtle.exitonclick()
+turtle.bye()
+
+여기서 개념은 먼저 벽을 그려준다.
+그 뒤 벽을 반으로 나눠 거북이 그 반을 넘어갈 시
+방향을 반대로 하는 코드를 짜주면 된다.
